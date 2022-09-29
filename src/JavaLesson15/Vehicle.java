@@ -1,6 +1,6 @@
 package JavaLesson15;
 
-public class Vehicle extends Crashable implements Drivable {
+public class Vehicle extends Crashable implements Drivable, Cloneable {
    int noOfWheels = 2;
    double theSpeed = 0;
    int carStrength = 0;
@@ -34,8 +34,30 @@ public class Vehicle extends Crashable implements Drivable {
         return this.carStrength;
     }
 
+    public Vehicle() {
+
+    }
+
     public Vehicle(int wheels, double speed) {
         this.noOfWheels = wheels;
         this.theSpeed = speed;
+    }
+
+    @Override
+    public String toString() {
+        return "Num of Wheels: " + this.noOfWheels;
+    }
+
+    public Object clone() {
+        Vehicle car;
+        try {
+            car = (Vehicle) super.clone();
+        }
+        catch(CloneNotSupportedException e) {
+           return null;
+        }
+
+        return car;
+
     }
 }
