@@ -9,14 +9,14 @@ public class TicTac implements ActionListener {
     JButton[] bton = new JButton[9];
     JPanel t_panel = new JPanel();
     JPanel bt_panel = new JPanel();
-    JTextField textField = new JTextField();
+    JLabel textField = new JLabel();
     int chance_flag = 0;
     Random random = new Random(100);
     boolean pl1_chance;
 
     int count = 0;
 
-    public Game() {
+    public TicTac() {
 
         frame.setSize(800, 800);
         frame.setLocationRelativeTo(null);
@@ -29,6 +29,7 @@ public class TicTac implements ActionListener {
         textField.setBackground(new Color(120, 20, 124));
         textField.setForeground(new Color(25, 255, 0));
         textField.setFont(new Font("Ink Free", Font.BOLD, 75));
+        textField.setText("Tic Tac Toe");
 
         t_panel.setBounds(0, 0, 800, 100);
         t_panel.setLayout(new BorderLayout());
@@ -39,6 +40,7 @@ public class TicTac implements ActionListener {
         for(int i = 0; i < 9; i++) {
             bton[i] = new JButton();
             bt_panel.add(bton[i]);
+//            bton[i].setBackground(new Color(0, 255, 0));
             bton[i].setFocusable(false);
             bton[i].setFont(new Font("Ink Free", Font.BOLD, 120));
             bton[i].addActionListener(this);
@@ -79,7 +81,7 @@ public class TicTac implements ActionListener {
         int n = JOptionPane.showOptionDialog(frame, "Game Over\n" + s, "Game Over", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, option, option[0]);
         if(n == 0) {
             frame.dispose();
-            new Game();
+            new TicTac();
         }
         else {
             frame.dispose();
@@ -168,29 +170,30 @@ public class TicTac implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         System.out.println("Inside Action Listener " + (++count) + " times");
         for(int i = 0; i < 9; i++) {
-            if(e.getSource() == bton[i]) {
-                if(pl1_chance) {
-                    if(bton[i].getText() == "") {
-                        bton[i].setForeground(new Color(255, 0, 0));
-                        bton[i].setText("X");
-                        pl1_chance = false;
-                        textField.setText("O Turn");
-                        chance_flag++;
-                        matchCheck();
-                    }
-                    else {
-                        if(bton[i].getText() == "") {
-                            bton[i].setForeground(new Color(0, 0, 255));
-                            bton[i].setText("O");
-                            pl1_chance = true;
-                            textField.setText("X Turn");
-                            chance_flag++;
-                            matchCheck();
-                        }
-                    }
-                }
-            }
+           if(e.getSource() == bton[i]) {
+               if(pl1_chance) {
+                   if(bton[i].getText() == "") {
+                       bton[i].setForeground(new Color(255, 0, 0));
+                       bton[i].setText("X");
+                       pl1_chance = false;
+                       textField.setText("O Turn");
+                       chance_flag++;
+                       matchCheck();
+                   }
+               }
+               else {
+                   if(bton[i].getText() == "") {
+                       bton[i].setForeground(new Color(0, 0, 255));
+                       bton[i].setText("O");
+                       pl1_chance = true;
+                       textField.setText("X Turn");
+                       chance_flag++;
+                       matchCheck();
+                   }
+               }
+           }
         }
+
     }
 
     public static void main(String[] args) {
