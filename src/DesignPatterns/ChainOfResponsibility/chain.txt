@@ -1,0 +1,19 @@
+Unethical behaviour by an employee; who takes the blame;
+
+Employee
+Manager
+CEO
+
+You Click graphical element on a form
+
+ Button handles it, stoes further processing 
+ underlying group box
+ underlying window
+
+CCG Computer game
+ creature has attack and defence values
+ Those can be boosted by other cards
+
+A Chain of responsibility -> A chain of components who all get a chance to process a command or a query, optinally having default processing implementation and an ability to terminate processing chain.
+
+

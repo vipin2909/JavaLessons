@@ -1,0 +1,20 @@
+DigitalOcean definition -> Decorator is used to modify the functionality of an object at runtime.
+At the same time other instances of the same class will not be affected by
+this, so individual objects get the modified behaviour.
+
+Adding behavior with altering the class itself.
+
+Motivation :-
+1) Want to augment an object with additional functionality
+2) Do not want to require or alter existing code(OCP)
+3) Want to keep new functionality separate (SRP)
+4) Need to be able to interact with existing structures
+5) Two options
+   5 i) Inherit from required object if possible, some classes are final
+   5 ii) Build a Decorator, which simply references the decorated Object(s)
+
+Facilitates the addition of behaviors of individual objects without
+inheriting from them.
+
+
+
