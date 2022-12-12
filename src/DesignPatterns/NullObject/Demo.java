@@ -106,3 +106,14 @@ public class Demo {
     }
 
 }
+
+
+// Summary
+
+// Implement the required interface
+// Rewrite the methods with empty bodies
+// -> if methods is non-void, return default value for given type
+// -> If these values are ever used, you are in trouble
+// Supply an instance object in place of actual object
+// Cross your fingers
+
