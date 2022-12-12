@@ -30,7 +30,7 @@ class Account {
     }
 }
 
-class NullLog implements Log1 {
+class NullLog1 implements Log1 {
 
     @Override
     public int getRecordLimit() {
