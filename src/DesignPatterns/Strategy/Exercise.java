@@ -211,3 +211,8 @@ class Pair<X, Y> {
         this.second = second;
     }
 }
+
+
+// Define an algorithm at high level
+// Define the interface you expect each strategy to folloe
+// Provide for either dynamic or static composition of strategy in overall algotirhm
